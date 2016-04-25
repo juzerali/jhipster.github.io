@@ -32,6 +32,10 @@ sitemap:
     This is the "classical" Spring Security authentication mechanism, but we have improved it quite significantly. It uses the HTTP Session, so it is a stateful mechanism: if you plan to scale your application on multiple servers, you need to have a load balancer with sticky sessions so that each user stays on the same server.
 </p>
 
+<p>
+    If you want your app to be stateless while still using HTTP Session Authentication, you can do so by choosing clustered HTTP sessions with Hazelcast during code generation. 
+</p>
+
 <h3>Improved remember-me mechanism</h3>
 <p>
     We have modified the Spring Security remember-me mechanism so that you have a unique token, that is stored in your database (SQL or NoSQL database, depending on your choice during generation!). We also store more information than the standard implementation, so you have a better understanding of where those tokens come from: IP address, browser, date... And we generate a complete administration screen, so that you can invalidate sessions, for example if you forgot to log out on another computer.
